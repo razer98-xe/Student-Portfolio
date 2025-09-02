@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>24H218 | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      line-height: 1.6;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    nav a, .project-box a, form button, #topBtn {
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4a148c, #d81b60);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    /* Navigation */
+    nav {
+      background: #311b92;
+      padding: 12px;
+      text-align: center;
+      position: relative;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover, nav a.active {
+      color: #ffd54f;
+    }
+
+    /* Hamburger menu button */
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      color: white;
+      background: none;
+      border: none;
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      cursor: pointer;
+    }
+
+    /* Sections */
+    section {
+      padding: 40px 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-in-out;
+    }
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #about { background: #ede7f6; }
+    #skills { background: #fce4ec; }
+    #project { background: #f3e5f5; }
+
+    .skills-list {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .skill {
+      background: linear-gradient(135deg, #4a148c, #d81b60);
+      padding: 15px 25px;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    }
+
+    /* Projects Grid */
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .project-box {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .project-box a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #d81b60;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .project-box a:hover {
+      background: #4a148c;
+    }
+
+    form {
+      max-width: 400px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    form input, form textarea, form button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form input:focus, form textarea:focus {
+      outline: none;
+      border-color: #4a148c;
+    }
+
+    form button {
+      background: #4a148c;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    form button:hover {
+      background: #d81b60;
+    }
+
+    footer {
+      background: linear-gradient(135deg, #d81b60, #4a148c);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    /* Scroll to Top Button */
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #d81b60;
+      color: white;
+      border: none;
+      padding: 12px 15px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    #topBtn.show {
+      opacity: 1;
+    }
+
+    #topBtn:hover {
+      background: #4a148c;
+    }
+
+    /* Mobile Responsive */
+    @media(max-width:700px) {
+      nav a {
+        display: none;
+        margin: 10px 0;
+      }
+
+      nav.active a {
+        display: block;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .skills-list {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Portfolio</h1>
+    <p>Hi, I am <b>Raj Santosh !!!</b></p>
+  </header>
+
+  <nav id="navbar">
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
+    <a href="#about">About Me</a>
+    <a href="#skills">My Skills</a>
+    <a href="#project">My Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>This is my student portfolio. <br>I am learning to design and build websites using simple HTML, CSS, and JavaScript.</p>
+  </section>
+
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-list">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+    </div>
+  </section>
+
+  <section id="project">
+    <h2>My Projects</h2>
+    <div class="projects-container">
+      <div class="project-box">
+        <h3>Portfolio Website</h3>
+        <a href="https://example.com" target="_blank">View</a>
+      </div>
+      <div class="project-box">
+        <h3>Calculator App</h3>
+        <a href="#" target="_blank">View</a>
+      </div>
+      <div class="project-box">
+        <h3>Weather App</h3>
+        <a href="#" target="_blank">View</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/mdklgknr" method="post">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea rows="4" name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Raj Santosh Khedekar | All Rights Reserved</p>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="topBtn">↑</button>
+
+  <script>
+    const topBtn = document.getElementById("topBtn");
+    const nav = document.getElementById("navbar");
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    // Scroll button fade in/out
+    window.addEventListener("scroll", () => {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        topBtn.classList.add("show");
+      } else {
+        topBtn.classList.remove("show");
+      }
+    });
+
+    topBtn.onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // Mobile nav toggle
+    function toggleMenu() {
+      nav.classList.toggle("active");
+    }
+
+    // Fade-in sections
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(section => observer.observe(section));
+
+    // Highlight active nav link
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 70;
+        if (pageYOffset >= sectionTop) current = section.getAttribute("id");
+      });
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
