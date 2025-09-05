@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar container">
+      <a href="#hero" class="logo">My<span>Portfolio</span></a>
+      <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">My Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Dark Mode Toggle -->
+      <button id="darkModeToggle" aria-label="Toggle dark mode" title="Toggle Dark Mode">
+        🌙
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="container hero-section">
+      <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+        <h1>
+          Hi, I'm <span class="highlight">Raj Santosh Khedekar.</span><br />
+        </h1>
+        <p>Building performant websites & digital experiences.</p>
+        <a href="#projects" class="btn btn-primary">See My Work</a>
+      </div>
+      <div class="hero-image" data-aos="fade-left" data-aos-duration="1000">
+        <!-- Placeholder illustration or image -->
+        <img src="C:\Users\khede\OneDrive\Pictures\download.jpeg" alt="Developer Illustration" />
+      </div>
+    </section>
+
+    <section id="about" class="container section">
+      <h2 data-aos="fade-right">About Me</h2>
+      <p data-aos="fade-left">
+        This is my student portfolio.<br>I intend to learn even more about HTML, CSS, JavaScript and<br>aquire even more skills in the future.
+      </p>
+    </section>
+
+    <section id="skills" class="container section">
+      <h2 data-aos="fade-up">My Skills</h2>
+      <div class="skills-list" data-aos="fade-up" data-aos-duration="700">
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">JavaScript</span>
+      </div>
+    </section>
+
+    <section id="projects" class="container section">
+      <h2 data-aos="zoom-in">Projects</h2>
+      <div class="project-list">
+        <article class="project-card" data-aos="fade-up" data-aos-duration="700">
+          <h3>Responsive Portfolio Website</h3>
+          <p>A modern portfolio built with React and Tailwind CSS. Fully responsive and optimized for speed.</p>
+          <a href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Live Demo</a>
+        </article>
+        <article class="project-card" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
+          <h3>E-Commerce Landing Page</h3>
+          <p>Landing page featuring product showcases and smooth animations using vanilla JavaScript and CSS Grid.</p>
+          <a href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View Code</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="container section">
+      <h2 data-aos="fade-right">Get in Touch</h2>
+      <form id="contact-form" action="https://formspree.io/f/mdklgknr" method="POST" data-aos="fade-up" data-aos-duration="700" novalidate>
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <p>© 2025 Raj Santosh Khedekar. All rights reserved.</p>
+      <p>
+      <a href="https://github.com/razer98-xe" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" class="footer-icon" />
+      </a>
+      </p>
+    </div>
+  </footer>
+
+  <button id="scrollToTopBtn" title="Back to top">↑</button>
+
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
