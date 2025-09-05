@@ -471,10 +471,34 @@ body.dark-mode footer {
   #menu-toggle:focus {
     color: var(--color-primary);
   }
+
+   .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 4.5rem;
+    right: 1.5rem;
+    background: var(--color-white);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 6px 15px rgb(0 0 0 / 0.1);
+  }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
+   .nav-links {
+    display: none; /* hide menu by default on mobile */
+  }
+
+  .hero-image img {
+    width: 200px;      /* set exact width */
+    height: 200px;     /* make height equal to width */
+    border-radius: 50%; /* ensures a perfect circle */
+    object-fit: cover;  /* keeps image proportions inside the circle */
+  }
+  
   .hero-section {
     flex-direction: column-reverse;
     gap: 2rem;
