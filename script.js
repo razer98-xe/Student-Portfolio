@@ -2,10 +2,10 @@
 const scrollBtn = document.getElementById('scrollToTopBtn');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 400) {
-    scrollBtn.style.display = 'block';
+  if (window.scrollY > 300) {
+    scrollBtn.classList.add ('show');
   } else {
-    scrollBtn.style.display = 'none';
+    scrollBtn.classList.remove ('none');
   }
 });
 
@@ -16,7 +16,7 @@ scrollBtn.addEventListener('click', () => {
 // Contact Form Submission
 const form = document.getElementById('contact-form');
 form.addEventListener('submit', e => {
-  e.preventDefault();
+  // e.preventDefault();
   alert("Thank you for your message! I will get back to you shortly.");
   form.reset();
 });
@@ -48,5 +48,6 @@ const navLinks = document.querySelector('.nav-links');
 
 menuToggle.addEventListener('click', () => {
   navLinks.classList.toggle('active');
-
+  const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
+  menuToggle.setAttribute('aria-expanded', !expanded);
 });
