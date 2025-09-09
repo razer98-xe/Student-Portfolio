@@ -5,129 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Assignments Gallery</title>
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f9fafb;
-      color: #1e293b;
-      margin: 0;
-      padding: 0;
-      transition: background 0.4s, color 0.4s;
-    }
+    /* Reset & Base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; background: #f9fafb; color: #1e293b; transition: background 0.4s, color 0.4s; }
+    header { background: #ffffff; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .logo { font-size: 1.5rem; font-weight: 700; }
+    #darkModeToggle { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
 
-    header {
-      background: #ffffff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+    /* Gallery Section */
+    .gallery-section { padding: 2rem; text-align: center; }
+    .gallery-section h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .gallery-item { background: #ffffff; padding: 1rem; border-radius: 0.75rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+    .gallery-item:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+    .gallery-item img { width: 100%; height: auto; border-radius: 0.5rem; object-fit: cover; }
+    .gallery-item p { margin-top: 0.5rem; font-weight: 600; }
 
-    .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      text-decoration: none;
-      color: #1e293b;
-    }
+    /* Footer */
+    footer { text-align: center; padding: 1.5rem; background: #1e293b; color: #f9fafb; }
 
-    #darkModeToggle {
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .gallery-item {
-      background: #fff;
-      border-radius: 0.75rem;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-      text-align: center;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-
-    .gallery-item p {
-      padding: 0.5rem;
-      font-weight: 600;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      background: #1e293b;
-      color: #f9fafb;
-    }
-
-    body.dark-mode {
-      background: #0f172a;
-      color: #e2e8f0;
-    }
-
-    body.dark-mode header {
-      background: #1e293b;
-    }
-
-    body.dark-mode .gallery-item {
-      background: #1e293b;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    }
-
-    body.dark-mode footer {
-      background: #0f172a;
-    }
+    /* Dark Mode */
+    body.dark-mode { background: #0f172a; color: #e2e8f0; }
+    body.dark-mode header { background: #1e293b; }
+    body.dark-mode .gallery-item { background: #1e293b; box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+    body.dark-mode footer { background: #0f172a; }
   </style>
 </head>
 <body>
 
-<header>
-  <a href="index.html" class="logo">← Back to Portfolio</a>
-  <button id="darkModeToggle">🌙</button>
-</header>
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">My Assignments</h1>
+      <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
+    </nav>
+  </header>
 
-<main>
-  <h1 style="text-align:center; padding:2rem 0;">My Assignments Screenshots</h1>
-  <div class="gallery">
-    <div class="gallery-item">
-      <img src="https://i.postimg.cc/Xv6MkzF1/Card-reveal.jpg" alt="Assignment 1">
-      <p>Assignment 1</p>
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.postimg.cc/QCyw94hb/Registration-form-CSS-types.jpg" alt="Assignment 2">
-      <p>Assignment 2</p>
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.postimg.cc/yYDw4Hyr/Time-table-Media.jpg" alt="Assignment 3">
-      <p>Assignment 3</p>
-    </div>
-    <!-- Add more screenshots -->
-  </div>
-</main>
+  <main>
+    <section class="gallery-section">
+      <h2>Assignment Screenshots</h2>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="https://i.postimg.cc/Xv6MkzF1/Card-reveal.jpg" alt="Assignment 1">
+          <p>Card Reveal</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.postimg.cc/QCyw94hb/Registration-form-CSS-types.jpg" alt="Assignment 2">
+          <p>Registration Form & CSS Types</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://i.postimg.cc/yYDw4Hyr/Time-table-Media.jpg" alt="Assignment 3">
+          <p>Time Table & Media</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<footer>
-  <p>© 2025 Raj Santosh Khedekar</p>
-</footer>
+  <footer>
+    <p>© 2025 Raj Santosh Khedekar</p>
+  </footer>
 
-<script>
-const toggle = document.getElementById('darkModeToggle');
-toggle.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-});
-</script>
+  <script>
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
 
 </body>
 </html>
