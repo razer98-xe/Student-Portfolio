@@ -227,7 +227,7 @@ body.dark-mode .hero-image img {
 
 /* Sections */
 .section {
-  padding: 5rem 0;
+  padding: 3rem 1rem;
   text-align: center;
 }
 
@@ -337,7 +337,7 @@ textarea {
   border-radius: 0.5rem;
   border: 1.5px solid var(--color-input-border);
   font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
   resize: vertical;
   background: var(--color-white);
   color: var(--color-text);
@@ -420,13 +420,18 @@ footer a:focus {
   transition: filter 0.3s ease;
 }
 
+body.dark-mode .nav-links.active {
+  background: #1e293b; /* darker background for dark mode */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
 body.dark-mode .footer-icon {
   filter: invert(1); /* invert icon in dark mode */
 }
 
 body.dark-mode footer {
-  background: var(--color-white);
-  color: var(--color-text);
+  background: #0f172a;
+  color: var(--color-muted);
 }
 
 /* Scroll to Top */
@@ -444,7 +449,16 @@ body.dark-mode footer {
   box-shadow: 0 4px 15px rgb(37 99 235 / 0.4);
   transition: background-color 0.3s ease;
   display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
   z-index: 9999;
+}
+
+#scrollToTopBtn.show {
+  opacity: 1;
+  transform: translateY(0); /* slide up into place */
+  pointer-events: auto;
 }
 
 #scrollToTopBtn:hover,
