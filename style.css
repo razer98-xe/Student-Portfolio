@@ -213,8 +213,8 @@ body.dark-mode header {
 }
 
 .hero-image img {
-  max-width: 180px;
-  height: 180px;
+  max-width: 220px;
+  height: 220px;
   border-radius: 50%; /* Makes the image circular */
   object-fit: cover;  /* Ensures it stays proportional */
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
