@@ -1,7 +1,7 @@
 # 🎤 My Presentation
 
 ## 📑 PDF Version
-👉 [View Full Presentation (PDF)](./MyPresentation.pdf)
+👉 [View Full Presentation (PDF)](./PortfolioPPT.pdf)
 
 ---
 
