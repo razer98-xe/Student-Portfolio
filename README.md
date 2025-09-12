@@ -1,6 +1,6 @@
 
 # 📑 My Presentation
-👉 [View Full Presentation (PDF)](./portfolio-ppt.pptx)
+👉 [View Full Presentation](./portfolio-ppt.pptx)
 
 ---
 
